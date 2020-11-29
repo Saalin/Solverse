@@ -16,6 +16,9 @@ namespace Solverse.Tests.Api
 
             var response = await client.GetAsync("/home");
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
+
+            var content = await response.Content.ReadAsStringAsync();
+            Assert.That(content, Is.EqualTo("Development"));
         }
     }
 }
