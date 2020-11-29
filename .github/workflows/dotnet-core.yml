@@ -23,3 +23,8 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage-report
+        path: Solverse.Tests.Api/coverage.opencover.xml
