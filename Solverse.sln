@@ -7,11 +7,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solverse.Api", "Solverse.Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solverse.Tests.Api", "Solverse.Tests.Api\Solverse.Tests.Api.csproj", "{6BC96F5D-F262-45BD-8536-47F99B4342A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solverse.Domain", "Solverse.Domain\Solverse.Domain.csproj", "{FFA4BD4E-DC44-4A64-8BC5-DE9C3795CA0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solverse.Domain", "Solverse.Domain\Solverse.Domain.csproj", "{FFA4BD4E-DC44-4A64-8BC5-DE9C3795CA0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solverse.Application", "Solverse.Application\Solverse.Application.csproj", "{137BFE22-9F27-4244-A38E-FCE74E1B4AED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solverse.Application", "Solverse.Application\Solverse.Application.csproj", "{137BFE22-9F27-4244-A38E-FCE74E1B4AED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solverse.Persistence", "Solverse.Persistence\Solverse.Persistence.csproj", "{8950B54D-7B55-4427-A18A-B3361FCF54E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solverse.Persistence", "Solverse.Persistence\Solverse.Persistence.csproj", "{8950B54D-7B55-4427-A18A-B3361FCF54E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C08E9CCE-E354-41E0-AEFA-3078325D3812}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

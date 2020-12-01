@@ -1,4 +1,3 @@
-using AutoFixture;
 using Bogus;
 using Microsoft.AspNetCore.Mvc.Testing;
 using NUnit.Framework;
@@ -38,9 +37,9 @@ namespace Solverse.Tests.Api
             var countBeforeAdd = JsonDocument.Parse(await response.Content.ReadAsStringAsync()).RootElement.GetArrayLength();
             Assert.That(countBeforeAdd, Is.Zero);
 
-            var faker = new Faker("en");
-            var createCommand = new Fixture().Build<CreateExampleCommand>()
-                .With(x => x.Name).Do(x => x.Name = faker.Name.LastName()).Create();
+            var createCommand = new Faker<CreateExampleCommand>()
+                .RuleFor(x => x.Name, x => x.Name.LastName())
+                .Generate();
             var response2 = await client.PostAsJsonAsync("/home/examples", createCommand);
             Assert.That(response2.StatusCode, Is.EqualTo(HttpStatusCode.OK));
 
