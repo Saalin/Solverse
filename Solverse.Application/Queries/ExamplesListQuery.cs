@@ -6,6 +6,5 @@ namespace Solverse.Application.Queries
 {
     public class ExamplesListQuery : IRequest<List<Example>>
     {
-
     }
 }
