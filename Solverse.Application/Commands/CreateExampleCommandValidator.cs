@@ -6,7 +6,7 @@ namespace Solverse.Application.Commands
     {
         public CreateExampleCommandValidator()
         {
-            RuleFor(x => x.Name).NotEmpty().NotNull();
+            RuleFor(x => x.Name).NotEmpty();
         }
     }
 }

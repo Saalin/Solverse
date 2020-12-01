@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using Solverse.Application;
 using Solverse.Domain;
 using Solverse.Persistence;
@@ -25,6 +26,7 @@ namespace Solverse.Api
                 fv.RegisterValidatorsFromAssembly(typeof(ApplicationModule).Assembly);
                 fv.ImplicitlyValidateChildProperties = true;
             });
+
             services.AddMediatR(typeof(Startup));
 
             services.AddSwaggerGen(c =>
@@ -68,6 +70,8 @@ namespace Solverse.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSerilogRequestLogging();
 
             app.UseRouting();
             app.UseHttpsRedirection();
