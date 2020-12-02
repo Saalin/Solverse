@@ -28,6 +28,7 @@ jobs:
         path: Solverse.Tests.Api/coverage.opencover.xml
     - uses: codecov/codecov-action@v1
       with:
+        token: ${{ secrets.CODECOV_TOKEN }}
         file: ./Solverse.Tests.Api/coverage.opencover.xml
         fail_ci_if_error: false
         verbose: true
