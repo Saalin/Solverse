@@ -20,16 +20,10 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-    - name: Archive code coverage results
-      uses: actions/upload-artifact@v2
-      with:
-        name: code-coverage-report
-        path: Solverse.Tests.Api/coverage.opencover.xml
+      run: dotnet test --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=../TestResults/
     - uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./Solverse.Tests.Api/coverage.opencover.xml
-        files: ./Solverse.Tests.Domain/coverage.opencover.xml
+        file: ./TestResults/coverage.opencover.xml
         fail_ci_if_error: false
         verbose: true
